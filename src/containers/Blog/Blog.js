@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
-import {Route, Link } from 'react-router-dom'
-//import axios from 'axios';
-//import axios from '../../axios';
+import {Route, NavLink } from 'react-router-dom'
 import Posts from './Posts/Posts'
 import NewPost from './NewPost/NewPost'
+import {withRouter} from 'react-router-dom';
 
-
-// import Post from '../../components/Post/Post';
-// import FullPost from './FullPost/FullPost';
-// import NewPost from './NewPost/NewPost';
 
 import classes from './Blog.scss';
 
@@ -24,25 +19,23 @@ class Blog extends Component {
                     <nav>
                         <ul>
                             <li>
-                                <Link to={'/'} >Home</Link>
+                                <NavLink activeClassName={''} to={'/'} exact >Home</NavLink>
                             </li>
                             <li>
-                                <Link to={{
+                                <NavLink to={{
                                     pathname: '/new-post',
                                     hash: '#submit',
                                     search: '?test'
-                                }} >New Post</Link>
+                                }} exact >New Post</NavLink>
                             </li>
                         </ul>
                     </nav>
                 </header>
-
                 <Route path={'/'} exact component={Posts}/>
                 <Route path={'/new-post'} component={NewPost}/>
-
             </div>
         );
     }
 }
 
-export default Blog;
+export default withRouter(Blog);

@@ -1,35 +1,46 @@
-.Blog section{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 80%;
-    margin: auto;
-}
 
-.Blog ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    text-align: center;
+.Blog {
+  :global {
 
-}
+    section {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      width: 80%;
+      margin: auto;
+    }
 
-.Blog li {
-    display: inline-block;
-    margin: 20px;
-}
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
 
-.Blog a {
-    text-decoration: none;
-    color: black;
-}
+    li {
+      display: inline-block;
+      margin: 20px;
+    }
 
-.Blog a:hover {
-    color: #4090ff;
-}
+    a {
+      text-decoration: none;
+      color: black;
+    }
 
-.Blog a:active {
-    color: #8a1818;
+    a:hover {
+      color: #4090ff;
+    }
+
+    a:active {
+      color: #8a1818;
+    }
+
+    a.active {
+      background-color: firebrick;
+      color: white;
+    }
+
+  }
 }
 

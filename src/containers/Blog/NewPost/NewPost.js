@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import classes from './NewPost.css';
+import classes from './NewPost.scss';
 import axios from 'axios';
 
 class NewPost extends Component {
@@ -20,6 +20,9 @@ class NewPost extends Component {
         })
     }
 
+    componentDidMount() {
+        console.log(this.props);
+    }
 
     render() {
         return (
