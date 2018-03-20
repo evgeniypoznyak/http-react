@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import classes from './NewPost.scss';
 import axios from 'axios';
-import {Redirect} from 'react-router-dom'
 
 class NewPost extends Component {
     state = {
         title: '',
         content: '',
         author: 'Evgeniy',
-        submitted: false,
 
     }
 
@@ -20,7 +18,9 @@ class NewPost extends Component {
         }
         axios.post('/posts', post).then((response) => {
             console.log(response);
-            this.setState({submitted: true})
+         //   this.props.history.push('/posts');
+            this.props.history.replace('/posts');
+
         })
     }
 
@@ -30,15 +30,10 @@ class NewPost extends Component {
 
     render() {
 
-        let redirect = null;
-        if (this.state.submitted) {
-            redirect = <Redirect to={'/posts'}/>
-        }
 
         return (
 
             <div className={classes.NewPost}>
-                {redirect}
                 <h1>Add a Post</h1>
                 <label>Title</label>
                 <input type="text" value={this.state.title}
